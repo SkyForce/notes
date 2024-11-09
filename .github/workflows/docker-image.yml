@@ -47,7 +47,7 @@ jobs:
 
       # Upload the Docker image as an artifact
       - name: Upload Docker image artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
            name: notes-app-image
            path: notes-app.tar
