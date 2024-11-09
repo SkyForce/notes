@@ -41,3 +41,16 @@ jobs:
       - name: Build Docker image
         run: docker build -t notes-app:latest .
 
+      # Save the Docker image as a tar file
+      - name: Save Docker image as artifact
+        run: docker save notes-app:latest -o notes-app.tar
+
+      # Upload the Docker image as an artifact
+      - name: Upload Docker image artifact
+        uses: actions/upload-artifact@v2
+        with:
+           name: notes-app-image
+           path: notes-app.tar
+
+
+
