@@ -38,19 +38,21 @@ jobs:
         run: mvn clean package -DskipTests
 
       # Build the Docker image
-      - name: Build Docker image
-        run: docker build -t notes-app:latest .
+      - name: Build and start services with Docker Compose
+        run: docker-compose up --build -d
 
       # Save the Docker image as a tar file
       - name: Save Docker image as artifact
-        run: docker save notes-app:latest -o notes-app.tar
+        run: |
+          IMAGE_ID=$(docker images -q notes-app:latest)
+          docker save $IMAGE_ID -o notes-app.tar
 
       # Upload the Docker image as an artifact
       - name: Upload Docker image artifact
         uses: actions/upload-artifact@v4
         with:
-           name: notes-app-image
-           path: notes-app.tar
+          name: notes-app-image
+          path: notes-app.tar
 
 
 
