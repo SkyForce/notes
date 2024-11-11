@@ -53,7 +53,7 @@ Response: 200 OK or 404 if not found
 
    Endpoint: GET /notes
 
-   Optional: tags param and paging: ?tags=tag1,tag2&page=0&size=20
+   Optional: tags param and paging: ?tags=BUSINESS,PERSONAL&page=0&size=20
 
 
    Description: Retrieves a paginated list of all notes with basic details.
