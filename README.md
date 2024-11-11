@@ -6,7 +6,7 @@ A simple notes management application with RESTful APIs for creating, retrieving
 
 To build and run the application locally, use the following commands:
 
-1. **Build the Application**
+1. **Build and run the Application**
    ```bash
    mvn clean package
    docker-compose up --build
@@ -53,7 +53,7 @@ Response: 200 OK or 404 if not found
 
    Endpoint: GET /notes
 
-   Optional: tags param and paging: ?tags=tag1,tag2&page=2&size=3
+   Optional: tags param and paging: ?tags=tag1,tag2&page=0&size=20
 
 
    Description: Retrieves a paginated list of all notes with basic details.
